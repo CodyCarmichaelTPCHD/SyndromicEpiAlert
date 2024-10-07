@@ -1,0 +1,8 @@
+install.packages("shiny")
+install.packages("shinydashboard")
+install.packages("shinythemes")
+install.packages("rmarkdown")
+install.packages("httr")
+install.packages("jsonlite")
+install.packages("dplyr")
+install.packages("lubridate")

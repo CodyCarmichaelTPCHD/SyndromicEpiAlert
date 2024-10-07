@@ -1,0 +1,76 @@
+---
+title: "EpiAlert v2.0 - Count based Map Report - Demographics"
+author: "TPCHD - APD Team"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output: rmdformats::material
+---
+
+
+```{r setup, include=FALSE}
+
+library(knitr)
+library(kableExtra)
+knitr::opts_chunk$set(message = FALSE)
+load("IterativeData.RData")
+
+
+Syndromename <- ifelse(DF_Iter$ComboExamination == TRUE, 
+                        DF_Iter$PairedSyndromeName[1], 
+                        DF_Iter$Syndromes[1])
+
+
+StartDate <- DF_Iter$StartDate[1] 
+EndDate <- DF_Iter$EndDate[1]
+
+```
+
+
+Introduction
+===========
+This data product was created with the intent of examining incidents of interest for any syndromes available through the ESSENCE system. As such, this data product has the same limitations as the ESSENCE system and precautions should be taken when interpreting results as anything other than preliminary, and are subject to change with data fill-in. Any trends within a 14 day period should be treated with caution. 
+
+**This Report was generated for Syndrome: `r Syndromename`, Date: `r StartDate` to `r EndDate`. **
+
+
+
+
+
+```{r ,echo=FALSE}
+ if (DF_Iter$Maps[1] == TRUE) {
+asis_output("# Count Map of Visits, by Age, Race/Ethnicity, and Gender.  \n") # Header that is only shown if print_option == TRUE
+ }
+```
+
+```{r ,echo=FALSE}
+ if (DF_Iter$Maps[1] == TRUE) {
+asis_output("## Age Group  \n") # Header that is only shown if print_option == TRUE
+ }
+```
+```{r ,echo=FALSE}
+ if (DF_Iter$Maps[1] == TRUE) {
+load("AgeMap.RData")
+Leaflet_Age
+ }
+```
+```{r ,echo=FALSE}
+ if (DF_Iter$Maps[1] == TRUE) {
+asis_output("## Race/Ethnicity  \n") # Header that is only shown if print_option == TRUE
+ }
+```
+```{r ,echo=FALSE}
+ if (DF_Iter$Maps[1] == TRUE) {
+load("REMap.RData")
+Leaflet_RE
+ }
+```
+```{r ,echo=FALSE}
+ if (DF_Iter$Maps[1] == TRUE) {
+asis_output("## Gender  \n") # Header that is only shown if print_option == TRUE
+ }
+```
+```{r ,echo=FALSE}
+ if (DF_Iter$Maps[1] == TRUE) {
+load("SexMap.RData")
+Leaflet_Sex
+ }
+```

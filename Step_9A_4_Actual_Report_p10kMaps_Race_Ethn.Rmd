@@ -1,0 +1,50 @@
+---
+title: "EpiAlert v2.0 - Per 10k Race/Ethnicity based Map Report"
+author: "TPCHD - APD Team"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output: rmdformats::material
+---
+
+
+```{r setup, include=FALSE}
+
+library(knitr)
+library(kableExtra)
+knitr::opts_chunk$set(message = FALSE)
+load("IterativeData.RData")
+
+
+Syndromename <- ifelse(DF_Iter$ComboExamination == TRUE, 
+                        DF_Iter$PairedSyndromeName[1], 
+                        DF_Iter$Syndromes[1])
+
+
+StartDate <- DF_Iter$StartDate[1] 
+EndDate <- DF_Iter$EndDate[1]
+
+```
+
+
+Introduction
+===========
+This data product was created with the intent of examining incidents of interest for any syndromes available through the ESSENCE system. As such, this data product has the same limitations as the ESSENCE system and precautions should be taken when interpreting results as anything other than preliminary, and are subject to change with data fill-in. Any trends within a 14 day period should be treated with caution. 
+
+**This Report was generated for Syndrome: `r Syndromename`, Date: `r StartDate` to `r EndDate`. **
+
+
+```{r ,echo=FALSE}
+ if (DF_Iter$Maps[1] == TRUE & DF_Iter$TimeSeriesPer10kVisits[1]==TRUE) {
+asis_output("# per10k Map of Visits, by Race/Ethnicity.\n") # Header that is only shown if print_option == TRUE
+ }
+```
+```{r ,echo=FALSE}
+ if (DF_Iter$Maps[1] == TRUE & DF_Iter$TimeSeriesPer10kVisits[1]==TRUE) {
+asis_output("## Race/Ethnicity  \n") # Header that is only shown if print_option == TRUE
+ }
+```
+```{r ,echo=FALSE}
+ if (DF_Iter$Maps[1] == TRUE & DF_Iter$TimeSeriesPer10kVisits[1]==TRUE) {
+load("RE10kMap.RData")
+Leaflet_RE_10k
+ }
+```

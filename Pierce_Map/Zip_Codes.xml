@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><metadata>
+    <idinfo>
+        <citation>
+            <citeinfo>
+                <title>Zip Codes</title>
+            </citeinfo>
+        </citation>
+        <descript>
+            <abstract>  Zipcode polygons throughout Pierce County.  Data was acquired from Zip+4 Address Information System, and then adjusted to ensure parcels fell in their correct zipcode.  This data should be cross-referenced with the USPS for the most current street and site address changes.  Please see metadata for additional (information(https://matterhorn.co.pierce.wa.us/GISmetadata/pdbis_zip_codes.html) Any data download constitutes acceptance of the Terms of Use (https://matterhorn.co.pierce.wa.us/Disclaimer/PierceCountyGISDataTermsofUse.pdf)</abstract>
+            <purpose/>
+        </descript>
+        <keywords>
+            <theme>
+                <themekt>None</themekt>
+                <themekey>Pierce</themekey>
+                <themekey>County</themekey>
+                <themekey>Washington</themekey>
+                <themekey>Political</themekey>
+                <themekey>zip</themekey>
+                <themekey>code</themekey>
+                <themekey>zip</themekey>
+                <themekey>postal</themekey>
+                <themekey>postal</themekey>
+                <themekey>codes</themekey>
+                <themekey>USPS</themekey>
+            </theme>
+        </keywords>
+        <accconst>None</accconst>
+        <useconst/>
+        <datacred/>
+    </idinfo>
+    <metainfo>
+        <metstdn>FGDC Content Standard for Digital Geospatial Metadata</metstdn>
+        <metstdv>FGDC-STD-001-1998</metstdv>
+        <mettc>local time</mettc>
+    </metainfo>
+</metadata>
